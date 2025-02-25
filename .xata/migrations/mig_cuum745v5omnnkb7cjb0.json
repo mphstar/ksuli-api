@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cuum745v5omnnkb7cjb0",
+    "operations": [
+      {
+        "add_column": {
+          "table": "kategori_kuis",
+          "column": {
+            "name": "name",
+            "type": "text",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cuum745v5omnnkb7cjb0",
+  "parent": "mig_cuum6n1dsuem1m1rjou0",
+  "schema": "public",
+  "startedAt": "2025-02-25T06:30:40.895738Z"
+}

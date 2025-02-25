@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cuum7updsuem1m1rjov0",
+    "operations": [
+      {
+        "add_column": {
+          "table": "kuis",
+          "column": {
+            "name": "person_name",
+            "type": "text",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cuum7updsuem1m1rjov0",
+  "parent": "mig_cuum7etv5omnnkb7cjc0",
+  "schema": "public",
+  "startedAt": "2025-02-25T06:32:28.200867Z"
+}

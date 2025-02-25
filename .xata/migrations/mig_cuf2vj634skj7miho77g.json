@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cuf2vj634skj7miho77g",
+    "operations": [
+      {
+        "add_column": {
+          "up": "''",
+          "table": "visitor",
+          "column": {
+            "name": "timezone",
+            "type": "text",
+            "comment": ""
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cuf2vj634skj7miho77g",
+  "parent": "mig_cuf2v5nlmd4pfs40pn60",
+  "schema": "public",
+  "startedAt": "2025-02-01T14:29:33.300889Z"
+}

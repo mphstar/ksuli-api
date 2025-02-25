@@ -1,0 +1,7 @@
+{
+  "databaseURL": "https://Bintang-Malindo-Eka-Putra-s-workspace-q8glhu.us-east-1.xata.sh/db/ksuli",
+  "codegen": {
+    "output": "src/xata.ts",
+    "moduleType": "deno"
+  }
+}

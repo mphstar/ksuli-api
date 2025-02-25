@@ -1,0 +1,30 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cuum8t9dsuem1m1rjp10",
+    "operations": [
+      {
+        "add_column": {
+          "table": "kuis",
+          "column": {
+            "name": "kategori_id",
+            "type": "text",
+            "comment": "{\"xata.link\":\"kategori_kuis\"}",
+            "nullable": true,
+            "references": {
+              "name": "kategori_id_link",
+              "table": "kategori_kuis",
+              "column": "xata_id",
+              "on_delete": "SET NULL"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cuum8t9dsuem1m1rjp10",
+  "parent": "mig_cuum7updsuem1m1rjov0",
+  "schema": "public",
+  "startedAt": "2025-02-25T06:34:29.719794Z"
+}

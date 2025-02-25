@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cuumalhdsuem1m1rjp20",
+    "operations": [
+      {
+        "add_column": {
+          "table": "kuis",
+          "column": {
+            "name": "score",
+            "type": "int",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cuumalhdsuem1m1rjp20",
+  "parent": "mig_cuum8t9dsuem1m1rjp10",
+  "schema": "public",
+  "startedAt": "2025-02-25T06:38:16.11245Z"
+}

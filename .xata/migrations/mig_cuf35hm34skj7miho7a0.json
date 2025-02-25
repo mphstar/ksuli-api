@@ -1,0 +1,30 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cuf35hm34skj7miho7a0",
+    "operations": [
+      {
+        "add_column": {
+          "table": "detail_visitor",
+          "column": {
+            "name": "visitor_id",
+            "type": "text",
+            "comment": "{\"xata.link\":\"visitor\"}",
+            "nullable": true,
+            "references": {
+              "name": "visitor_id_link",
+              "table": "visitor",
+              "column": "xata_id",
+              "on_delete": "SET NULL"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cuf35hm34skj7miho7a0",
+  "parent": "mig_cuf35ae34skj7miho790",
+  "schema": "public",
+  "startedAt": "2025-02-01T14:42:15.392315Z"
+}

@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cuf2t5u34skj7miho75g",
+    "operations": [
+      {
+        "add_column": {
+          "up": "''",
+          "table": "visitor",
+          "column": {
+            "name": "ip_address",
+            "type": "text",
+            "comment": ""
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cuf2t5u34skj7miho75g",
+  "parent": "mig_cuf2sk634skj7miho74g",
+  "schema": "public",
+  "startedAt": "2025-02-01T14:24:23.772572Z"
+}
