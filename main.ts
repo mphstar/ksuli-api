@@ -28,7 +28,7 @@ router.get("/", (ctx) => {
   ctx.response.body = { message: "Hello, This K-Suli" };
 });
 
-router.post("/proses-kuis", async (ctx) => {
+router.post("/proses-kuis", authMiddleware, async (ctx) => {
   const body = await ctx.request.body.json();
 
   if (!body.kategori_id || !body.person_name || !body.score) {
@@ -58,7 +58,6 @@ router.post("/proses-kuis", async (ctx) => {
 const app = new Application();
 
 // Gunakan middleware sebelum routes
-app.use(authMiddleware);
 app.use(
   oakCors({
     origin: "*", // Bisa diganti dengan "http://localhost:5173" jika hanya ingin membolehkan localhost
