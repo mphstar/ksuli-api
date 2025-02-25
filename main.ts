@@ -6,6 +6,7 @@ import {
 } from "https://deno.land/x/oak@v17.1.4/mod.ts";
 import { getXataClient } from "./src/xata.ts";
 import { Next } from "https://deno.land/x/oak@v17.1.4/middleware.ts";
+import { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts"; // 🔹 Import CORS middleware
 
 const router = new Router();
 const xata = getXataClient();
@@ -47,7 +48,7 @@ router.post("/proses-kuis", async (ctx) => {
       message: "Kuis berhasil disimpan",
       data: res,
     };
-  // deno-lint-ignore no-unused-vars
+    // deno-lint-ignore no-unused-vars
   } catch (error) {
     ctx.response.status = 500;
     ctx.response.body = { error: "Internal Server Error" };
@@ -58,6 +59,13 @@ const app = new Application();
 
 // Gunakan middleware sebelum routes
 app.use(authMiddleware);
+app.use(
+  oakCors({
+    origin: "*", // Bisa diganti dengan "http://localhost:5173" jika hanya ingin membolehkan localhost
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Izinkan metode HTTP tertentu
+    allowedHeaders: ["Content-Type", "Authorization"], // Izinkan header tertentu
+  })
+);
 app.use(router.routes());
 app.use(router.allowedMethods());
 
