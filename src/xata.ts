@@ -282,6 +282,8 @@ let instance: XataClient | undefined = undefined;
 export const getXataClient = () => {
   if (instance) return instance;
 
-  instance = new XataClient();
+  instance = new XataClient({
+    apiKey: Deno.env.get("XATA_API_KEY"),
+  });
   return instance;
 };
