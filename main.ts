@@ -28,6 +28,34 @@ router.get("/", (ctx) => {
   ctx.response.body = { message: "Hello, This K-Suli" };
 });
 
+router.get("/ranking", authMiddleware, async (ctx) => {
+  const page: number = parseInt(ctx.request.url.searchParams.get("page")!) ?? 1;
+  const size: number =
+    parseInt(ctx.request.url.searchParams.get("size")!) ?? 20;
+
+  const search = ctx.request.url.searchParams.get("search") ?? "";
+  const kategori_id = ctx.request.url.searchParams.get("kategori_id") ?? "";
+
+  const ranking = await xata.db.kuis
+    .select(["person_name", "score", "kategori_id"])
+    .filter({
+      person_name: {
+        $iContains: search,
+      },
+      kategori_id: kategori_id,
+    })
+    .sort("score", "desc")
+    .sort("xata.createdAt", "desc")
+    .getPaginated({
+      pagination: {
+        size: size,
+        offset: (page - 1) * size,
+      },
+    });
+
+  ctx.response.body = ranking;
+});
+
 router.post("/proses-kuis", authMiddleware, async (ctx) => {
   const body = await ctx.request.body.json();
 
